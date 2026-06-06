@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23C2762A'/%3E%3Ctext%20x='16'%20y='23'%20font-family='Arial'%20font-size='19'%20font-weight='bold'%20fill='white'%20text-anchor='middle'%3EU%3C/text%3E%3C/svg%3E">
 <title>Secure Checkout | Unearth</title>
 <meta name="description" content="Complete your Unearth order - secure checkout. 30-day money-back, 1-year warranty, free shipping.">
 
@@ -537,7 +538,7 @@ window.FunnelEngine = {
   funnelId: "12b577c7-a63e-4ea0-a842-cbaacb7946a5",
   pageId: "cd559622-6f9e-43c7-aa51-f2b334b8ac81",
   pageType: "checkout",
-  products: [{"id":"be67adb2-f9b3-4f89-a246-d0abfa723566","name":"Unearth Metal Detector - 1 Detector","price_cents":14900,"compare_at_price_cents":21900,"currency":"usd","image_url":"https://unearth.shop/images/prod_main.jpg","offer_label":null,"offer_description":null,"shipping_cents":0,"is_primary":true,"position":0},{"id":"cb177841-66ce-4dd4-aa32-1ba6562bd1ea","name":"Unearth Metal Detector - 2 Detectors","price_cents":27800,"compare_at_price_cents":43800,"currency":"usd","image_url":"https://unearth.shop/images/prod_main.jpg","offer_label":null,"offer_description":null,"shipping_cents":0,"is_primary":false,"position":1},{"id":"4e6b9482-6972-403c-a49a-92a0a363f272","name":"Unearth Metal Detector - 3 Detectors","price_cents":39700,"compare_at_price_cents":65700,"currency":"usd","image_url":"https://unearth.shop/images/prod_main.jpg","offer_label":null,"offer_description":null,"shipping_cents":0,"is_primary":false,"position":2}],
+  products: [{"id":"be67adb2-f9b3-4f89-a246-d0abfa723566","name":"Unearth Metal Detector - 1 Detector","price_cents":16900,"compare_at_price_cents":23900,"currency":"usd","image_url":"https://unearth.shop/images/prod_main.jpg","offer_label":null,"offer_description":null,"shipping_cents":0,"is_primary":true,"position":0},{"id":"cb177841-66ce-4dd4-aa32-1ba6562bd1ea","name":"Unearth Metal Detector - 2 Detectors","price_cents":27800,"compare_at_price_cents":43800,"currency":"usd","image_url":"https://unearth.shop/images/prod_main.jpg","offer_label":null,"offer_description":null,"shipping_cents":0,"is_primary":false,"position":1},{"id":"4e6b9482-6972-403c-a49a-92a0a363f272","name":"Unearth Metal Detector - 3 Detectors","price_cents":39700,"compare_at_price_cents":65700,"currency":"usd","image_url":"https://unearth.shop/images/prod_main.jpg","offer_label":null,"offer_description":null,"shipping_cents":0,"is_primary":false,"position":2}],
   stripePublishableKey: "pk_live_51SM9r7CV0B2KOmXXq0LDIO174zhFEaMqO3slq8HW8yFoZKedWrwIAYczzxCxQPYrVxoV6M3h1pjdUFoeMBAo71vL00coL89fee",
   checkoutConfig: {"bump_enabled":false,"shipping_label":"Standard Shipping","free_shipping_label":"FREE Shipping","shipping_cost_cents":499,"shipping_threshold_cents":8000},
 
@@ -1333,19 +1334,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (sessData.data && sessData.data.session_id && sessData.data.first_page) {
           // Redirect to first upsell with session ID
-          var upsellUrl = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||14900)/100);
+          var upsellUrl = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||16900)/100);
           if (FE._navUrl) upsellUrl = FE._navUrl(upsellUrl);
           window.location.href = upsellUrl;
         } else {
           // No upsells - go to thank you
-          var thankUrl = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||14900)/100);
+          var thankUrl = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||16900)/100);
           if (FE._navUrl) thankUrl = FE._navUrl(thankUrl);
           window.location.href = thankUrl;
         }
       } catch (sessErr) {
         // If session creation fails, still go to thank you (don't block the customer)
         console.error("Upsell session error:", sessErr);
-        var fallbackUrl = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||14900)/100);
+        var fallbackUrl = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||16900)/100);
         if (FE._navUrl) fallbackUrl = FE._navUrl(fallbackUrl);
         window.location.href = fallbackUrl;
       }
@@ -1556,12 +1557,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         var sessData = await sessRes.json();
         if (sessData.data && sessData.data.session_id && sessData.data.first_page) {
-          window.location.href = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||14900)/100);
+          window.location.href = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||16900)/100);
         } else {
-          window.location.href = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||14900)/100);
+          window.location.href = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||16900)/100);
         }
       } catch(e) {
-        window.location.href = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||14900)/100);
+        window.location.href = "/thankyou.html?value=" + ((window.FunnelEngine&&window.FunnelEngine._calculatedTotal||16900)/100);
       }
     } catch(err) {
       ev.complete("fail");
